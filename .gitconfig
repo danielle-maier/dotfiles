@@ -1,0 +1,53 @@
+
+[user]
+	email = danielle.e.maier@gmail.com
+	name = Danielle Maier
+    username = danielle-maier
+
+[github]
+	user = danielle-maier
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = red
+
+[alias]
+    co = checkout
+    cob = checkout -b
+    c = commit
+    cm = commit -m
+    cam = commit -am
+    st = status
+    br = branch
+    s = status -s
+	lg = "log --oneline --decorate --all --"
+    sq = rebase -i HEAD~2
+[push]
+	default = simple
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = true
+	s = "status -s"
+[core]
+	autocrlf = input
+	editor = vim
+[credential]
+	helper = cache
+[merge]
+    tool = vimdiff

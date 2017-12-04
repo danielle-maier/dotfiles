@@ -1,0 +1,18 @@
+{:+ {:app [(:lt.objs.plugins/load-js "gibo_compiled.js" true)]
+
+     :gibo [:lt.plugins.gibo/add!
+            :lt.plugins.gibo/remove!
+            :lt.plugins.gibo/review!
+            :lt.plugins.gibo/write!
+            :lt.plugins.gibo/display-buffer]
+
+     :gibo-list [:lt.plugins.gibo/add-boilerplate
+                 :lt.plugins.gibo/repo-check
+                 :lt.plugins.gibo/refresh]
+
+     :gibo-repo [:lt.plugins.gibo/prompt-for-clone
+                 :lt.plugins.gibo/pull-gh!
+                 :lt.plugins.gibo/clone-gh!
+                 :lt.plugins.gibo/on-out
+                 :lt.plugins.gibo/on-exit
+                 :lt.plugins.gibo/on-error]}}

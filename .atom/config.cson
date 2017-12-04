@@ -1,0 +1,32 @@
+"*":
+  "atom-ternjs":
+    useSnippets: true
+  core:
+    audioBeep: false
+    closeDeletedFileTabs: true
+    disabledPackages: [
+      "linter-jshint"
+      "linter-javac"
+      "linter"
+      "linter-ui-default"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "nord-atom-ui"
+      "nord-atom-syntax"
+    ]
+  editor:
+    fontFamily: "source code pro"
+    fontSize: 16
+    preferredLineLength: 120
+  "exception-reporting":
+    userId: "23f62350-898e-4690-a0cd-2f7c965c491e"
+  fonts:
+    fontFamily: "Source Code Pro Medium"
+  "linter-eslint":
+    useGlobalEslint: true
+  "linter-ui-default":
+    panelHeight: 36
+  swackets: {}
+  welcome:
+    showOnStartup: false

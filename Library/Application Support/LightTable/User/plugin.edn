@@ -1,0 +1,20 @@
+{:desc "TODO",
+ :version "0.0.1",
+ :source "TODO",
+ :behaviors "user.behaviors",
+ ;; Do not edit - :dependencies are auto-generated
+:dependencies {
+"CSS" "0.0.6",
+ "Clojure" "0.3.1",
+ "Color Picker" "0.0.7",
+ "HTML" "0.1.0",
+ "JSBeautify" "0.0.3",
+ "Javascript" "0.2.0",
+ "Linting" "0.0.5",
+ "Paredit" "0.0.4",
+ "Python" "0.0.7",
+ "Rainbow" "0.0.8",
+ "gibo" "0.3.3",
+ "lt-eslint" "0.0.2"},
+ :author "TODO",
+ :name "User"}

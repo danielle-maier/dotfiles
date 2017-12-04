@@ -1,0 +1,30 @@
+.CodeMirror-gutter-wrapper .CodeMirror-lint-marker-Error, .CodeMirror-gutter-wrapper .CodeMirror-lint-marker-Warning {
+  height: 10px;
+  margin-top: 5px;
+  /* TODO: these should be pulled from settings */
+}
+
+.CodeMirror-gutter-wrapper .CodeMirror-lint-marker-Error {
+  background-color: #D3696C;
+}
+
+.CodeMirror-gutter-wrapper .CodeMirror-lint-marker-Warning {
+  background-color: #FFFF31;
+}
+
+.CodeMirror-lint-mark-error, .CodeMirror-lint-mark-warning {
+  border-bottom-width: 2px;
+  border-bottom-style: dotted;
+}
+
+.CodeMirror-lint-mark-error {
+  border-bottom-color: #D3696C;
+}
+
+.CodeMirror-lint-mark-warning {
+  border-bottom-color: #FFFF31;
+}
+
+.CodeMirror-lint-tooltip {
+  display: none; /* Hide these tooltips for now */
+}
