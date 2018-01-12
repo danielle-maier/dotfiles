@@ -48,7 +48,7 @@ export LANG="en_US.UTF-8"
 export GEM_HOME="$HOME/.gems"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
+export GOPATH="$HOME/workspace"
 
 # Aliases
 source ~/.aliases
