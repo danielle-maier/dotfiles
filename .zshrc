@@ -29,9 +29,17 @@ plugins=(git git-extras web-search bower command-not-found common-aliases debian
 # User configuration
 
 # PATH
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/java/jdk1.8.0_74/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export GEM_HOME="$HOME/.gems"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export GOPATH="$HOME/workspace/go"
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # Oh-My-ZSH
 source $ZSH/oh-my-zsh.sh
@@ -45,10 +53,6 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export DEFAULT_USER="daniellemaier"
 export LANG="en_US.UTF-8"
-export GEM_HOME="$HOME/.gems"
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export GOPATH="$HOME/workspace"
 
 # Aliases
 source ~/.aliases
