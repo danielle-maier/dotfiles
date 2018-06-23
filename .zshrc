@@ -2,6 +2,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Set oh-my-zsh to auto update
+DISABLE_UPDATE_PROMPT=true
+# Uncomment to disable automatic upgrades
+# DISABLE_AUTO_UPDATE=true
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
