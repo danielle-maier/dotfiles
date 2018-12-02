@@ -1,6 +1,6 @@
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
 
 # Set oh-my-zsh to auto update
 DISABLE_UPDATE_PROMPT=true
@@ -11,7 +11,7 @@ DISABLE_UPDATE_PROMPT=true
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dogenpunk"
+ZSH_THEME="lambda"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -29,7 +29,27 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras web-search bower command-not-found common-aliases debian npm sudo vi-mode)
+plugins=(
+	git 
+	golang 
+	git-extras 
+	git-flow 
+	brew 
+	osx 
+	web-search 
+	bower 
+	command-not-found 
+	common-aliases 
+	tmux 
+	tmuxinator 
+	iterm2 
+	thefuck 
+	rsync 
+	npm 
+	sudo 
+	vi-mode
+	zsh-syntax-highlighting
+)
 
 # User configuration
 
@@ -58,6 +78,8 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export DEFAULT_USER="daniellemaier"
 export LANG="en_US.UTF-8"
+source ~/.bin/tmuxinator.zsh
+
 
 # Aliases
 source ~/.aliases
