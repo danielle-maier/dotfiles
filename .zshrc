@@ -11,7 +11,7 @@ DISABLE_UPDATE_PROMPT=true
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="lambda"
+ZSH_THEME="frosty"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -30,24 +30,16 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git 
-	golang 
-	git-extras 
-	git-flow 
-	brew 
-	osx 
-	web-search 
-	bower 
-	command-not-found 
-	common-aliases 
-	tmux 
-	tmuxinator 
-	iterm2 
-	thefuck 
-	rsync 
-	npm 
-	sudo 
-	vi-mode
+	brew
+	common-aliases
+	git
+	git-extras
+	git-flow
+	golang
+	npm
+	osx
+	rsync
+	sudo
 	zsh-syntax-highlighting
 )
 
@@ -78,8 +70,6 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export DEFAULT_USER="daniellemaier"
 export LANG="en_US.UTF-8"
-source ~/.bin/tmuxinator.zsh
-
 
 # Aliases
 source ~/.aliases
