@@ -1,52 +1,79 @@
 #!/usr/bin/env zsh
 
-local ICE="%(?,%{$fg_bold[blue]%}❆,%{$fg_bold[red]%}❆)"
-if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="magenta"; fi
+local black=$fg[black]
+local red=$fg[red]
+local blue=$fg[blue]
+local green=$fg[green]
+local yellow=$fg[yellow]
+local magenta=$fg[magenta]
+local cyan=$fg[cyan]
+local white=$fg[white]
 
+local black_bold=$fg_bold[black]
+local red_bold=$fg_bold[red]
+local blue_bold=$fg_bold[blue]
+local green_bold=$fg_bold[green]
+local yellow_bold=$fg_bold[yellow]
+local magenta_bold=$fg_bold[magenta]
+local cyan_bold=$fg_bold[cyan]
+local white_bold=$fg_bold[white]
+
+local flake="❆"
+
+function get_name {
+    local name="%m"
+    if [[ "$USER" == 'root' ]]; then
+        name="%{$red_bold%}$flake%{$red_bold%}$name%{$red_bold%}$flake%{$reset_color%}"
+    else
+        name="%{$white_bold%}$flake%{$magenta_bold%}$name%{$white_bold%}$flake%{$reset_color%}"
+    fi
+    echo $name
+}
+
+function get_time {
+    echo "%*"
+}
+
+function get_dir {
+    echo "%3~"
+}
 # Git sometimes goes into a detached head state. git_prompt_info doesn't
 # return anything in this case. So wrap it in another function and check
 # for an empty string.
 function check_git_prompt_info() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         if [[ -z $(git_prompt_info 2> /dev/null) ]]; then
-            echo "%{$fg[blue]%}detached-head%{$reset_color%}) $(git_prompt_status)
-%{$fg[yellow]%}→ "
+            echo "%{$fblue]%}detached-head%{$reset_color%}) $(git_prompt_status)
+%{$yellow%}→ "
         else
             echo "$(git_prompt_info 2> /dev/null) $(git_prompt_status)
-%{$fg_bold[cyan]%}⋙ "
+%{$cyan_bold%}⋙ "
         fi
     else
-        echo "%{$fg_bold[cyan]%}⋙ "
+        echo "%{$cyan_bold%}⋙ "
     fi
 }
 
-function get_time_stamp {
-    echo "%*"
-}
-
-PROMPT=$'\n'$ICE'\
- %{$fg_bold[$USERCOLOR]%}%m\
- %{$fg_bold[blue]%}❆\
- %{$fg_no_bold[cyan]%}[%3~]\
- $(check_git_prompt_info)\
-%{$reset_color%}'
-
-# RPROMPT='$(get_right_prompt)'
-RPROMPT="%{$fg_bold[blue]%}[%{$fg_bold[white]%}%T%{$fg_bold[blue]%}]"
-
 # Format for git_prompt_info()
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%} "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$blue%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✴︎"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$green_bold%} ✔ "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$red_bold%} ✘ "
 
 # Format for git_prompt_status()
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[magenta]%}+"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[magenta]%}±"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}✗"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}𝜽"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}‽"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[yellow]%}✱"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$magenta_bold%}+"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$magenta_bold%}±"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$red_bold%}-"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$blue_bold%}≻"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$cyan_bold%}≠"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$yellow_bold%}‽"
 
 # Format for git_prompt_ahead()
-ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg_bold[white]%}𝝀"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$white_bold%}𝝀"
+
+PROMPT="$(get_name)\
+ %{$cyan%}[$(get_dir)]\
+ $(check_git_prompt_info)\
+%{$reset_color%}"
+
+RPROMPT="%{$blue%}[%{$white%}$(get_time)%{$blue%}]"
