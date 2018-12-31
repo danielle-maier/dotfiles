@@ -19,7 +19,7 @@ local cyan_bold=$fg_bold[cyan]
 local white_bold=$fg_bold[white]
 
 local flake="❆"
-local arrow="⋙"
+local pchar="𝓲➜ "
 
 # Format for git_prompt_info()
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$blue%} "
@@ -31,9 +31,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$magenta_bold%} ✘ "
 ZSH_THEME_GIT_PROMPT_ADDED="%{$green_bold%}+"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$magenta_bold%}≅"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$red_bold%}-"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$blue_bold%}≻"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$blue_bold%}≪"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$cyan_bold%}≠"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$yellow_bold%}‽"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$yellow_bold%}∅"
 
 # Format for git_prompt_ahead()
 ZSH_THEME_GIT_PROMPT_AHEAD=" %{$white_bold%}𝝀"
@@ -150,9 +150,9 @@ $(get_git_prompt)\
 #change prompt color based on user lever
 function get_prompt_indicator {
     if [[ $? -eq 0 ]]; then
-        echo "%{$magenta_bold%}$arrow %{$reset_color%}"
+        echo "%{$magenta_bold%}$pchar %{$reset_color%}"
     else
-        echo "%{$red_bold%}$arrow %{$reset_color%}"
+        echo "%{$red_bold%}$pchar %{$reset_color%}"
     fi
 }
 
